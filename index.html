@@ -100,6 +100,26 @@
       opacity: 1;
       transform: translateY(0);
     }
+    /* Audio player */
+    .audio-player {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px 15px;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      z-index: 15;
+    }
+    .audio-player button {
+      background: transparent;
+      border: none;
+      color: white;
+      cursor: pointer;
+      margin-left: 10px;
+    }
   </style>
 </head>
 <body>
@@ -131,6 +151,13 @@
     Thank you for being the light in my life. I appreciate every moment we share.
   </p>
 </section>
+
+<!-- Audio Player -->
+<div class="audio-player">
+  <audio id="background-music" src="music/your-music.mp3" loop autoplay></audio>
+  <span>🎵 Now Playing</span>
+  <button onclick="toggleMusic()">⏯️</button>
+</div>
 
 <!-- External Libraries -->
 <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
@@ -166,6 +193,16 @@
       }
     });
   });
+
+  // Background Music Controls
+  function toggleMusic() {
+    const music = document.getElementById('background-music');
+    if (music.paused) {
+      music.play();
+    } else {
+      music.pause();
+    }
+  }
 </script>
 
 </body>
