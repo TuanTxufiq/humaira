@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Appreciation for My Girlfriend</title>
+  <!-- External Slick Carousel CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick-theme.min.css">
+  <style>
+    /* General styles */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background: #f5f5f5;
+      color: #333;
+    }
+    header {
+      text-align: center;
+      padding: 50px 20px;
+      background: linear-gradient(to bottom, #ff8a00, #ffc837);
+      color: white;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    /* Fade-in effect */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(20px);
+      transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+    }
+    .fade-in.show {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    /* Parallax section */
+    .parallax {
+      height: 400px;
+      background-size: cover;
+      background-attachment: fixed;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 2rem;
+      text-shadow: 0 2px 5px rgba(0, 0, 0, 0.7);
+    }
+    /* Carousel */
+    .carousel img {
+      width: 100%;
+      border-radius: 10px;
+    }
+    .carousel-container {
+      max-width: 800px;
+      margin: 20px auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Appreciation for My Girlfriend</h1>
+  <p class="fade-in">You are the sunshine of my life 🌟</p>
+</header>
+
+<section class="parallax" style="background-image: url('https://via.placeholder.com/1920x1080');">
+  My Love for You Is Endless ❤️
+</section>
+
+<div class="carousel-container">
+  <div class="carousel">
+    <div><img src="C:\Users\User\Documents\Project Meira\yes\image\memory1.jpg" alt="Memory 1"></div>
+    <div><img src="C:\Users\User\Documents\Project Meira\yes\image\memory2.jpg" alt="Memory 2"></div>
+    <div><img src="C:\Users\User\Documents\Project Meira\yes\image\memory3.jpg" alt="Memory 3"></div>
+  </div>
+</div>
+
+<section class="fade-in">
+  <p style="text-align: center; font-size: 1.2rem;">
+    Thank you for being in my life. This is a small token of my appreciation for everything you do.
+  </p>
+</section>
+
+<!-- External Libraries -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/rellax@1.12.1/rellax.min.js"></script>
+<script>
+  // Initialize Slick carousel
+  $(document).ready(function () {
+    $('.carousel').slick({
+      autoplay: true,
+      dots: true,
+      infinite: true,
+      speed: 500,
+    });
+  });
+
+  // Initialize Rellax for parallax effect
+  const rellax = new Rellax('.parallax');
+
+  // Fade-in effect for elements on scroll
+  const fadeElements = document.querySelectorAll('.fade-in');
+  window.addEventListener('scroll', () => {
+    fadeElements.forEach(el => {
+      const rect = el.getBoundingClientRect();
+      if (rect.top < window.innerHeight - 50) {
+        el.classList.add('show');
+      }
+    });
+  });
+</script>
+
+</body>
+</html>
